@@ -1,0 +1,42 @@
+/* src/components/Navbar/Navbar.module.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 200;
+  -webkit-transition: background 0.3s; /* For Safari/Chrome */
+  -moz-transition: background 0.3s;    /* For Firefox */
+  -o-transition: background 0.3s;      /* For older Opera versions */
+  transition: background 0.3s;         /* Standard syntax */
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.navMenu {
+  top: -490px;
+  transition: top 0.3s;
+}
+
+.navMenu.active {
+  top: 64px; /* Adjust this value based on the height of your navbar */
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.navLinkIcon {
+  margin-right: 8px; /* Adjust spacing between icon and text */
+}
+
+.highlight {
+  background: linear-gradient(45deg, #0052ff, #2ecc71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

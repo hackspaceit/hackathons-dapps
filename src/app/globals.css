@@ -1,0 +1,88 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color variables */
+  --color-foreground: 255, 255, 255;
+  --color-background-start: 0, 0, 0;
+  --color-background-end: 0, 0, 0;
+  --color-highlight: #0070f3;
+  --color-text-dark: #ffffff;
+  --color-text-light: #bbbbbb;
+
+  /* Gradients and other variables */
+  --primary-gradient: linear-gradient(45deg, #3498db, #2ecc71);
+  --background-gradient: linear-gradient(135deg, #000000, #1a1a1a);
+  --text-color: #ffffff;
+  --text-color-secondary: #bbbbbb;
+  --max-width: 1200px;
+  --padding: clamp(1rem, 5vw, 4rem);
+
+  /* Font variables */
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+
+  /* Sizes */
+  --size-footer-padding: 1rem;
+  --size-title: 2.5rem;
+  --size-description: 1.2rem;
+  --size-cta-padding: 0.5rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-foreground: 255, 255, 255;
+    --color-background-start: 0, 0, 0;
+    --color-background-end: 0, 0, 0;
+  }
+}
+
+@layer base {
+  html, body {
+    height: 100vh;
+  }
+  body {
+    color: rgb(var(--color-foreground));
+    background: linear-gradient(to bottom, transparent, rgb(var(--color-background-end))) rgb(var(--color-background-start));
+    font-family: var(--font-inter);
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--size-footer-padding);
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    font-family: var(--font-roboto);
+  }
+}
+
+@layer components {
+  .title {
+    font-family: var(--font-roboto);
+    font-size: var(--size-title);
+    font-weight: bold;
+    color: var(--color-text-dark);
+  }
+  .highlight {
+    color: var(--color-highlight);
+  }
+  .description {
+    font-family: var(--font-inter);
+    font-size: var(--size-description);
+    color: var(--color-text-light);
+  }
+  .cta {
+    font-family: var(--font-roboto);
+    background-color: var(--color-highlight);
+    color: white;
+    padding: var(--size-cta-padding);
+    border-radius: 5px;
+    text-decoration: none;
+  }
+}
